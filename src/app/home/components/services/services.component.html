@@ -2,68 +2,17 @@
     <div class="container-fluid">
         <div class="container py-5">
             <div class="row py-5">
-                <div class="col-sm-12">
-                    <h1 class="text-center lobster-font">Servicios</h1>
-                </div>
-                <div class="col-sm-12 offset-md-1 col-md-10">
-                    <mat-tab-group mat-align-tabs="center">
-                        <mat-tab label="First">
-                            <div class="row no-gutters py-5">
-                                <div class="col-sm-12">
-                                    <h3>Lorem ipsum</h3>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <button mat-button (click)="goToCheckout()">Checkout</button>
-                                </div>
-                            </div>
-                        </mat-tab>
-                        <mat-tab label="Second">
-                            <div class="row no-gutters py-5">
-                                <div class="col-sm-12">
-                                    <h3>Lorem ipsum</h3>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-tab>
-                        <mat-tab label="Third">
-                            <div class="row no-gutters py-5">
-                                <div class="col-sm-12">
-                                    <h3>Lorem ipsum</h3>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>lorem ipsum dolor sit amet</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </mat-tab>
-                    </mat-tab-group>
+                <div class="col-12">
+                    <h1 class="text-center lobster-font mb-0">Servicios</h1>
                 </div>
             </div>
+        </div>
+    </div>
+    <div *ngFor="let service of services" class="service__container d-flex flex-column flex-sm-column flex-md-row">
+        <img class="service__container-image" [src]="service.imgUrl" alt="">
+        <div class="service__container-content d-flex justify-content-center align-items-start flex-column px-4">
+            <h1 class="lobster-font">{{service.serviceTitle}}</h1>
+            <p>{{service.serviceDesc}}</p>
         </div>
     </div>
 </div>

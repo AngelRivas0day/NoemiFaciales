@@ -1,11 +1,12 @@
 <div id="contact">
-  <div class="container-fluid">
-    <div class="container py-5">
-      <div class="row py-5">
+  <div class="contact__container d-flex flex-column flex-sm-column flex-md-row">
+    <img class="contact__container-image" src="../assets/images/phone.jpg" alt="">
+    <div class="contact__container-content d-flex justify-content-center align-items-start flex-column">
+      <div class="row no-gutters py-5">
         <div class="col-sm-12">
           <h1 class="text-center lobster-font">Contáctame</h1>
         </div>
-        <div class="col-sm-12 offset-md-2 col-md-8">
+        <div class="col-sm-12">
           <mat-vertical-stepper [linear]="isLinear">
             <mat-step>
               <ng-template matStepLabel>Nombre</ng-template>

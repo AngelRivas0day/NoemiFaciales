@@ -1,13 +1,9 @@
-$main-color: #FFC973;
-$second-color: #BAE85D;
-$third-color: #66FFE1;
-$fourth-color: #E85D7A;
-$fifth-color: #8A78FF;
+@import '../../../../assets/variables/vars';
 
 #banner{
     height: 100vH;
     width: 100%;
-    padding-top: 70px;
+    //padding-top: 70px;
     .banner-content{
         width: 100%;
         height: 100%;
@@ -17,30 +13,40 @@ $fifth-color: #8A78FF;
         flex-direction: column;
         position: relative;
         .box{
-            width: 70%;
-            height: 70%;
+            width: 100%;
+            height: 100%;
             text-align: center;
-            background-image: 
-                linear-gradient(
-                rgba(0, 0, 0, 0.45), 
-                rgba(0, 0, 0, 0.45)
-                ),
-                url('../../../../assets//images/main_bg.jpg');
-            background-position: center;
-            background-size: cover;
+            background-image:url('../../../../assets/images/mask.svg'), url('../../../../assets//images/bg.jpg');
+            background-position: -500px, center;
+            background-size: cover, cover;
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-attachment: none, fixed;
+            @media #{$break-medium}{
+                background-position: -80px, right;
+                background-size: cover, 80%;
+            }
             .centered-box{
                 width: 100%;
                 // background-color: red;
-                color: #ffffff;
+                color: black;
+                text-align: left;
                 h1{
-                    font-size: 60px;
+                    font-size: 80px;
+                    line-height: 65px;
+                    @media #{$break-medium}{
+                        font-size: 140px;
+                        line-height: 120px;
+                    }
+                    @media #{$break-large}{
+                        font-size: 160px;
+                        line-height: 140px;
+                    }
                 }
                 h3{
-
+                    font-size: 16px;
                 }
             }
         }

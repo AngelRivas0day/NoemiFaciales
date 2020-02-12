@@ -8,6 +8,24 @@ import { Router } from '@angular/router';
 })
 export class ServicesComponent implements OnInit {
 
+  services: any[] = [
+    {
+      imgUrl: 'https://source.unsplash.com/random?health',
+      serviceTitle: 'Facial tipo 1',
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+    },
+    {
+      imgUrl: 'https://source.unsplash.com/random?health',
+      serviceTitle: 'Facial tipo 2',
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+    },
+    {
+      imgUrl: 'https://source.unsplash.com/random?health',
+      serviceTitle: 'Facial tipo 3',
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+    }
+  ];
+
   constructor(
     private router: Router
   ) { }
