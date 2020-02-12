@@ -1,0 +1,107 @@
+@import '../../../../assets/variables/vars';
+
+#footer{
+    font-family: 'Lobster', serif;
+    font-weight: lighter;
+    padding: 40px 0;
+    background-color: white;
+    .footer__content{
+        & > div{
+            @for $i from 1 to 7{
+                &:nth-child(#{$i}){
+                    @if $i == 3{
+                        order: 5;
+                    }@else{
+                        order: $i;
+                    }
+                }
+            }
+            @media #{$break-medium}{
+                @for $i from 1 to 7{
+                    &:nth-child(#{$i}){
+                        order: $i;
+                    }
+                }
+            }
+        }
+    }
+    .footer-title{
+        h1{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+    }
+    .social-media-list{
+        position: relative;
+        & mat-list{
+            display: flex;
+            flex-direction: row;
+            i{
+                font-size: 25px;
+                cursor: pointer;
+            }
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            width: 0px;
+            height: 0px;
+            bottom: calc(-120px / 2);
+            left: calc(50% - 2px);
+            @media #{$break-medium}{
+                width: 2px;
+                height: 60px;
+                background-color: #333333;
+            }
+        }
+    }
+    .first-list{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            width: 0%;
+            top: -23px;
+            height: 0;
+            margin: 0 auto;
+            @media #{$break-medium}{
+                background-color: #333333;
+                height: 2px;
+                width: 80%;
+            }
+        }
+    }
+    .second-list{
+        position: relative;
+        &::after{
+            position: absolute;
+            content: '';
+            width: 0%;
+            top: -23px;
+            height: 0;
+            margin: 0 auto;
+            @media #{$break-medium}{
+                background-color: #333333;
+                height: 2px;
+                width: 80%;
+            }
+        }
+    }
+    .unstyled-list{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        li{
+            height: 53px;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
