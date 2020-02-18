@@ -12,17 +12,17 @@ export class ServicesComponent implements OnInit {
     {
       imgUrl: 'https://source.unsplash.com/random?health',
       serviceTitle: 'Facial tipo 1',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
     },
     {
       imgUrl: 'https://source.unsplash.com/random?health',
       serviceTitle: 'Facial tipo 2',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
     },
     {
       imgUrl: 'https://source.unsplash.com/random?health',
       serviceTitle: 'Facial tipo 3',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, vero. Aliquam dolores expedita cupiditate a porro.'
+      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
     }
   ];
 

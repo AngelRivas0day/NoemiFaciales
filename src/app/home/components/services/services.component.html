@@ -1,18 +1,27 @@
-<div id="services">
-    <div class="container-fluid">
-        <div class="container py-5">
-            <div class="row py-5">
+<div id="services" class="py-5">
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
                 <div class="col-12">
                     <h1 class="text-center lobster-font mb-0">Servicios</h1>
                 </div>
             </div>
         </div>
     </div>
-    <div *ngFor="let service of services" class="service__container d-flex flex-column flex-sm-column flex-md-row">
-        <img class="service__container-image" [src]="service.imgUrl" alt="">
-        <div class="service__container-content d-flex justify-content-center align-items-start flex-column px-4">
-            <h1 class="lobster-font">{{service.serviceTitle}}</h1>
-            <p>{{service.serviceDesc}}</p>
+    <div class="container-fluid pb-5">
+        <div class="container">
+            <div class="row">
+                <div *ngFor="let service of services" class="col-xs-12 col-md-6 col-lg-4 service__container d-flex flex-column justify-content-center align-items-center py-5">
+                    <img class="service__container-image" [src]="service.imgUrl" alt="">
+                    <div class="service__container-content d-flex justify-content-center align-items-center flex-column pt-3">
+                        <h1 class="lobster-font">{{service.serviceTitle}}</h1>
+                        <p class="text-center sans-font">{{service.serviceDesc}}</p>
+                    </div>
+                </div>
+                <div class="col-12 text-center pt-5">
+                    <a href="/">ver mas</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

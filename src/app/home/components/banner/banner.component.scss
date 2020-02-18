@@ -45,8 +45,31 @@
                         line-height: 140px;
                     }
                 }
-                h3{
-                    font-size: 16px;
+                button{
+                    transition: ease .3s;   
+                    border-radius: 0px;
+                    border: 1px solid #333333;
+                    color: #333333;
+                    width: 200px;
+                    position: relative;
+                    z-index: 80;
+                    &:after{
+                        transition: ease .3s;
+                        content: '';
+                        width: 100%;
+                        position: absolute;
+                        height: 0px;
+                        background-color: #333333;
+                        bottom:0;
+                        left:0;
+                        z-index: -1 !important;
+                    }
+                    &:hover{
+                        color: white;
+                    }
+                    &:hover:after{
+                        height: 100%;
+                    }
                 }
             }
         }

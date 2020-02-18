@@ -88,7 +88,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .lobster-font{
-    font-family: 'Lobster', serif !important;
+    font-family: 'Poiret One', cursive;
+    // font-family: 'Lobster', serif !important;
 }
 
 .roboto-font{
@@ -97,4 +98,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-button-base{
     border-radius: 0px !important;
+}
+
+.sans-font{
+    font-family: 'Open Sans', sans-serif;
 }

@@ -4,37 +4,28 @@
     background-color: white;
     .service__container{
         height: 50vH;
+        transition: box-shadow .3s;
         &-image{
-            width: 100%;
-            height: 50%;
+            width: 250px;
+            height: 250px;
+            min-width: 250px;
+            min-height: 250px;
+            max-width: 250px;
+            max-height: 250px;
             object-fit: cover;
             object-position: center;
-            @media #{$break-medium}{
-                width: 50%;
-                height: 100%;
-            }
+            border-radius: 100%;
         }
         &-content{
-            height: 50%;
             width: 100%;
             box-sizing: border-box;
-            @media #{$break-medium}{
-                width: 50%;
-                height: 100%;
+            p{
+                margin: 0 auto;
+                width: 70%;
             }
         }
-        &:nth-child(even){
-            flex-direction: column !important;
-            @media #{$break-medium}{
-                flex-direction: row-reverse !important;
-            }
-            .service__container-content{
-                align-items: flex-end !important;
-                text-align: right;
-            }
-        }
-        &:nth-child(even){
-            
+        &:hover{
+            box-shadow: 0 0 11px rgba(33,33,33,.2); 
         }
     }
 }
