@@ -25,7 +25,7 @@
             align-items: center;
             background-attachment: none, fixed;
             @media #{$break-medium}{
-                background-position: -80px, right;
+                background-position: -200px, right;
                 background-size: cover, 80%;
             }
             .centered-box{

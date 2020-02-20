@@ -3,7 +3,7 @@
 #services{
     background-color: white;
     .service__container{
-        height: 50vH;
+        height: auto;
         transition: box-shadow .3s;
         &-image{
             width: 250px;
@@ -26,6 +26,12 @@
         }
         &:hover{
             box-shadow: 0 0 11px rgba(33,33,33,.2); 
+        }
+    }
+    .service__button{
+        width: 180px;
+        &:hover{
+            text-decoration: none;
         }
     }
 }

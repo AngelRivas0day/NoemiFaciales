@@ -15,6 +15,10 @@ const routes: Routes = [
       {
         path: 'carro',
         loadChildren: ()=>import('./checkout/checkout.module').then(m=>m.CheckoutModule)
+      },
+      {
+        path: 'servicio',
+        loadChildren: ()=>import('./service/service.module').then(m=>m.ServiceModule)
       }
     ]
   }
