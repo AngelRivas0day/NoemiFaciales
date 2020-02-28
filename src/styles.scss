@@ -103,21 +103,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .sans-font{
     font-family: 'Open Sans', sans-serif;
 }
-
-.mat-form-field-empty.mat-form-field-label {
-    color: white;
-}
-
-.mat-form-field-underline {
-    background-color: transparent !important;
-}
-
-.mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: white !important;
-}
-.mat-form-field-ripple {
-   /*change color of underline when focused*/
-   background-color: white !important;;
-}
-  

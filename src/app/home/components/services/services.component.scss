@@ -19,6 +19,7 @@
         &-content{
             width: 100%;
             box-sizing: border-box;
+            color: #333333;
             p{
                 margin: 0 auto;
                 width: 70%;
@@ -26,6 +27,7 @@
         }
         &:hover{
             box-shadow: 0 0 11px rgba(33,33,33,.2); 
+            text-decoration: none;
         }
     }
     .service__button{

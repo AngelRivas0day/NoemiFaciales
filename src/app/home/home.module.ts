@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MaterialModule } from '../material/material.module';
 import { ServicesComponent } from './components/services/services.component';
 import { ContainerComponent } from './components/container/container.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContainerComponent } from './components/container/container.component';
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ]
 })
 export class HomeModule { }
