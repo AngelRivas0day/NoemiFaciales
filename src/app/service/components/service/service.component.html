@@ -36,6 +36,18 @@
                 <div class="col-12">
                   <h1 class="lobster-font">LOREM IPSUM DOLOR SIT AMET</h1>
                 </div>
+                <div class="col-sm-12 col-md-4 offset-md-4 timeline__container my-4 py-0">
+                  <div *ngFor="let paso of pasos" class="timeline__item mb-3 px-4">
+                    <span class="timeline__item-step roboto-font">{{paso.no}}</span>
+                    <div class="timeline__header">
+                      <h1 class="lobster-font">{{paso.titulo}} <span class="roboto-font"> {{paso.tiempo}}</span></h1>
+                    </div>
+                    <div class="timeline__content">
+                      <p class="roboto-font">{{paso.desc}}</p>
+                    </div>
+                    <hr>
+                  </div>
+                </div>
                 <div class="col-12">
                   <p class="servicio__descripcion roboto-font">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vel rerum sit, ea aut quia non qui iste enim quasi doloremque necessitatibus in architecto aliquam inventore voluptatibus, recusandae natus quo.

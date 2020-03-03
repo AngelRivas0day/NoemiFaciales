@@ -10,12 +10,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,

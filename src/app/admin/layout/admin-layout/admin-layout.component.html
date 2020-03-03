@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="over" position="start" fixedInViewport="true">
+        <ul class="menu__list text-right w-100">
+            <li class="menu__list-header lobster-font">Menú</li>
+            <a class="menu__list-item lobster-font" routerLink="/">Home</a>
+            <a class="menu__list-item lobster-font">Sobre mi</a>
+            <a class="menu__list-item lobster-font">Servicios</a>
+            <a class="menu__list-item lobster-font">Contacto</a>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span>Third Line</span>
+                <span class="example-spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <button class="toggleButton" mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
