@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiServiceService } from 'src/app/shared/services/api-service.service';
 
 @Component({
   selector: 'app-services',
@@ -8,29 +9,19 @@ import { Router } from '@angular/router';
 })
 export class ServicesComponent implements OnInit {
 
-  services: any[] = [
-    {
-      imgUrl: 'https://source.unsplash.com/random?health',
-      serviceTitle: 'Facial tipo 1',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
-    },
-    {
-      imgUrl: 'https://source.unsplash.com/random?health',
-      serviceTitle: 'Facial tipo 2',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
-    },
-    {
-      imgUrl: 'https://source.unsplash.com/random?health',
-      serviceTitle: 'Facial tipo 3',
-      serviceDesc: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
-    }
-  ];
+  services: any[];
 
   constructor(
-    private router: Router
+    private router: Router,
+    public servicesApi: ApiServiceService
   ) { }
 
   ngOnInit() {
+    this.fetchServices();
+  }
+
+  async fetchServices(){
+    this.services = await this.servicesApi.getServices();
   }
 
   goToCheckout(){

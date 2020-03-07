@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiServiceService } from 'src/app/shared/services/api-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-service',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceComponent implements OnInit {
 
-  constructor() { }
+  service: any;
+
+  constructor(
+    public serviceApi: ApiServiceService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.fetchService();
   }
 
   pasos: any[] = [
@@ -38,5 +46,12 @@ export class ServiceComponent implements OnInit {
       tiempo: "20 mins"
     },
   ];
+
+  async fetchService(){
+    this.serviceApi.getService(this.route.snapshot.params.id);
+    console.log("id: " + this.route.snapshot.params.id);
+    const id = this.route.snapshot.params.id;
+    this.service = await this.serviceApi.getService(id);
+  }
 
 }

@@ -1,6 +1,7 @@
 @import '../../../../assets/variables/vars';
 
 .about{
+    background-color: white;
     .about__container{
         height: 90vH;
         @media #{$break-medium}{

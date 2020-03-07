@@ -18,8 +18,16 @@ const routes: Routes = [
         loadChildren: ()=>import('./checkout/checkout.module').then(m=>m.CheckoutModule)
       },
       {
-        path: 'servicio',
+        path: 'servicio/:id',
         loadChildren: ()=>import('./service/service.module').then(m=>m.ServiceModule)
+      },
+      {
+        path: 'sobre-mi',
+        loadChildren: ()=>import('./about/about.module').then(m=>m.AboutModule)
+      },
+      {
+        path: 'tienda',
+        loadChildren: ()=>import('./shop/shop.module').then(m=>m.ShopModule)
       }
     ]
   },

@@ -60,7 +60,7 @@ $second-color: #BAE85D;
 $third-color: #66FFE1;
 $fourth-color: #E85D7A;
 $fifth-color: #8A78FF;
-html, body { height: 100%; }
+html, body { height: 100%; scroll-behavior: smooth; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .section{
     padding-top: 50px;
@@ -102,4 +102,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .sans-font{
     font-family: 'Open Sans', sans-serif;
+}
+
+#footer{
+    .mat-form-field-empty.mat-form-field-label {
+        color: white !important;
+    }
+    .mat-form-field-underline {
+        background-color: white !important;
+    }
+    .mat-focused .mat-form-field-label {
+        /*change color of label*/
+        color: white !important;
+    }
+    .mat-form-field-ripple {
+       /*change color of underline when focused*/
+       background-color: white !important;;
+    }
 }
