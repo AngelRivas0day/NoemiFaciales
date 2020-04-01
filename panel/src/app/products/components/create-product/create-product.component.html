@@ -1,0 +1,81 @@
+<form [formGroup]="form" (ngSubmit)="create()">
+  <ng-template matStepLabel>Información del servicio</ng-template>
+  <div class="form-wrapper">
+    <mat-form-field>
+      <input
+        placeholder="Nombre del servicio"
+        matInput
+        formControlName="name"
+      />
+    </mat-form-field>
+    <div class="form-field">
+      <mat-label>Imagen</mat-label><br />
+      <input
+        (change)="handleChange($event)"
+        formControlName="image"
+        type="file"
+      />
+    </div>
+    <mat-form-field>
+      <textarea
+        placeholder="Descripción"
+        matInput
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+    <hr />
+  </div>
+</form>
+<div class="steps__container">
+	<h3>Pasos </h3>
+  <div class="steps__creator">
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="stepTime"
+        placeholder="Tiempo en mins"
+        type="text"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="stepName" placeholder="Nombre" type="text" />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        placeholder="Descripción"
+        [(ngModel)]="stepDesc"
+        matInput
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <div class="steps__actions">
+		<button mat-raised-button (click)="addStep()" color="primary">
+			Agregar paso
+			<i class="material-icons icon-edit">
+				add
+			</i>
+		</button>
+		<button mat-raised-button (click)="minusStep()" color="warn">
+			Eliminar paso
+			<i class="material-icons icon-edit">
+				close
+			</i>
+		</button>
+  </div>
+  <ul class="steps__list">
+    <li class="list__step" *ngFor="let step of steps">
+      <div class="step__content">
+				<p><span>Paso número: </span>{{ step.no }}</p>
+        <p><span>Tiempo: </span>{{ step.time }}</p>
+        <p><span>Nombre del paso: </span>{{ step.title }}</p>
+        <p><span>Descripción: </span>{{ step.description }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-raised-button type="submit" [disabled]="!form.valid">
+    Guardar
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,27 @@
+<div id="services" class="py-5">
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center lobster-font mb-0">Servicios</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid pb-5">
+        <div class="container">
+            <div class="row">
+                <a *ngFor="let service of services" [routerLink]="[ '/servicio', service.id ]" class="col-xs-12 col-md-6 col-lg-4 service__container d-flex flex-column justify-content-center align-items-center py-5">
+                    <img class="service__container-image" [src]="imageUrl + service.image" alt="">
+                    <div class="service__container-content d-flex justify-content-center align-items-center flex-column pt-3">
+                        <h1 class="lobster-font text-center">{{service.name}}</h1>
+                        <p class="text-center sans-font">{{service.description}}</p>
+                    </div>
+                </a>
+                <div class="col-12 text-center pt-5 services__button-container">
+                    <a mat-stroked-button class="service__button" href="/">ver mas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
