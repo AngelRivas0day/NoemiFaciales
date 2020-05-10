@@ -1,7 +1,48 @@
+@import "../../../../assets/variables/vars";
+
 #citas{
-    padding: 50px;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(90vH - 50px);
+    mat-vertical-stepper{
+        background: transparent !important;
+        display: block;
+        @media #{$break-medium}{
+            display: none;
+        }
+    }
+    mat-horizontal-stepper{
+        background: transparent !important;
+        display: none;
+        @media #{$break-medium}{
+            display: block;
+        }
+        .step__container{
+            min-height: 300px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .cita__resumen{
+            p{
+                color: rgba(0,0,0,.7);
+                font-weight: 200;
+                margin-bottom: 8px;
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+        .cita__agradecimiento{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            h2,h3{
+                text-align: center;
+            }
+        }
+    }
 }

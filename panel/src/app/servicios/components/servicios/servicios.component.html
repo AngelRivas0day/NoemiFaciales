@@ -1,0 +1,56 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Servicios</h5>
+                </div>
+                <div class="card-body">
+                    <button mat-raised-button (click)="openCreate()">
+                        <i class="now-ui-icons shopping_basket"></i>  Nuevo servicio
+                    </button>
+                    <div class="table-responsive">
+                        <table datatable [dtOptions]="dtOptions" class="row-border hover table w-100">
+                            <thead class="text-primary">
+                                <tr>
+                                    <th>ID</th>
+                                    <th></th>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let service of services; index as i">
+                                    <td>
+                                        {{service.id}}
+                                    </td>
+                                    <td class="image-container">
+                                        <img [src]="'http://localhost:3000/services/get-image/'+service.image" class="image-tabla">
+                                        <div class="imageEdit__container">
+                                            <i class="now-ui-icons media-1_album icon-edit" (click)="openUpdateImage(service.id)">
+                                            </i>
+                                        </div>
+                                    </td>
+                                    <td>{{service.name}}</td>
+                                    <td>{{service.description | slice:0:30}}...</td>
+                                    <td>
+                                        <i class="material-icons icon-trash" color="warning" (click)="eraseProduct(service.id)">
+                                            cancel
+                                        </i>
+                                        &nbsp;
+                                        <i class="material-icons icon-edit" (click)="openEditProduct(service.id)">
+                                            edit
+                                        </i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

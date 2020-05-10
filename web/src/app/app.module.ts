@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.component';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AdminLayoutComponent } from './admin/layout/admin-layout/admin-layout.c
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
     ],
   providers: [],
   bootstrap: [AppComponent]

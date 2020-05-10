@@ -9,6 +9,9 @@ export class BannerComponent implements OnInit {
 
   constructor() { }
 
+  image: string = "";
+  placeholder: string = "";
+
   ngOnInit() {
   }
 

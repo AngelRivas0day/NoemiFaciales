@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { UserIdleService } from 'angular-user-idle';
-import { ApiService } from './services/services';
+import { ApiService } from './api/services';
 
 @Component({
   selector: 'app-root',

@@ -9,8 +9,12 @@ var bodyParser = require('body-parser');
 const session = require('express-session');
 
 // importing routes
-const serviceRoutes = require('./routes/product');
+const serviceRoutes = require('./routes/service');
 const adminRoutes = require('./routes/admin');
+const productRoutes = require('./routes/product');
+const appointmentRoutes = require('./routes/appointment');
+const generalRoutes = require('./routes/general');
+const orderRoutes = require('./routes/order');
 
 // settings
 app.set('port', process.env.PORT || 3000);
@@ -41,8 +45,11 @@ app.use(bodyParser.json());
 
 // routes
 app.use('/services', serviceRoutes);
+app.use('/products', productRoutes);
 app.use('/admin', adminRoutes);
-// app.use('/reservations', reservationRoutes);
+app.use('/citas', appointmentRoutes);
+app.use('/about-me', generalRoutes);
+app.use('/orders', orderRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));

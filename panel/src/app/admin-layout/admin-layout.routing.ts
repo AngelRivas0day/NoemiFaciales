@@ -2,13 +2,14 @@ import { Routes } from '@angular/router';
 
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
-import { IconsComponent } from '../icons/icons.component';
-import { NotificationsComponent } from '../notifications/notifications.component';
 
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     // { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'productos',      loadChildren: ()=>import('../products/products.module').then(m=>m.ProductsModule)},
-    { path: 'eventos',        loadChildren: ()=>import('../events/events.module').then(m=>m.EventsModule) }
+    { path: 'servicios',      loadChildren: ()=>import('../servicios/servicios.module').then(m=>m.ServiciosModule) },
+    { path: 'productos',      loadChildren: ()=>import('../productos/productos.module').then(m=>m.ProductosModule) },
+    { path: 'citas',          loadChildren: ()=>import('../citas/citas.module').then(m=>m.CitasModule) },
+    { path: 'sobre-mi',       loadChildren: ()=>import('../about-me/about-me.module').then(m=>m.AboutMeModule)},
+    { path: 'ordenes',        loadChildren: ()=>import('../orders/orders.module').then(m=>m.OrdersModule) }
 ];

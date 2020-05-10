@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiServiceService } from 'src/app/shared/services/api-service.service';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class ServiceComponent implements OnInit {
   service: any;
 
   constructor(
-    public serviceApi: ApiServiceService,
+    public serviceApi: ApiService,
     private route: ActivatedRoute
   ) { }
 

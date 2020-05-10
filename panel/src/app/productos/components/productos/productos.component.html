@@ -1,0 +1,66 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Productos</h5>
+        </div>
+        <div class="card-body">
+          <button mat-raised-button (click)="openCreate()">
+            <i class="now-ui-icons shopping_basket"></i> Nuevo producto
+          </button>
+          <div class="table-responsive mt-4">
+            <table
+                datatable
+                [dtOptions]="dtOptions"
+                class="row-border hover dataTable w-100"
+            >
+              <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Existencia</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+              </thead>
+                <tbody *ngIf="products.length != 0">
+                    <tr *ngFor="let product of products; index as i">
+                        <td>
+                            {{product.id}}
+                        </td>
+                        <td class="image-container">
+                            <img [src]="'http://localhost:3000/products/get-image/'+product.image" class="image-tabla">
+                            <div class="imageEdit__container">
+                                <i class="now-ui-icons media-1_album icon-edit" (click)="openUpdateImage(product.id)">
+                                </i>
+                            </div>
+                        </td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.existence == 1 ? 'Si' : 'No'}}</td>
+                        <td>{{product.description | slice:0:50}}...</td>
+                        <td>
+                            <i class="material-icons icon-trash" color="warning" (click)="eraseProduct(product.id)">
+                                cancel
+                            </i>
+                            &nbsp;
+                            <i class="material-icons icon-edit" (click)="openEditProduct(product.id)">
+                                edit
+                            </i>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody *ngIf="products.length == 0">
+                    <tr>
+                        <td colspan="6" class="no-data-available">No data!</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,21 +4,22 @@
             <li class="menu__list-header lobster-font">Menú</li>
             <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/">Home</a>
             <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/sobre-mi">Sobre mi</a>
-            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" href="/#services">Servicios</a>
+            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/" fragment="services">Servicios</a>
             <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/citas">Agenda tu cita</a>
-            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/tienda">Tienda</a>
-            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font">Contacto</a>
+            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/productos">Tienda</a>
+            <a (click)="sidenav.toggle()" class="menu__list-item lobster-font" routerLink="/"  fragment="contact">Contacto</a>
         </ul>
     </mat-sidenav>
     <mat-sidenav-content>
-        <!-- <mat-toolbar>
-            <mat-toolbar-row>
-                <span>Third Line</span>
-                <span class="example-spacer"></span>
-            </mat-toolbar-row>
-        </mat-toolbar> -->
-        <button class="toggleButton" mat-button (click)="sidenav.toggle()">sidenav.toggle()</button>
-        <router-outlet></router-outlet>
+        <a routerLink="/carro-de-compras" class='cart_button'>
+            <span [matBadge]="total$ | async" matBadgeColor="warn" class="material-icons">
+                shopping_cart
+            </span>
+        </a>
+        <div (click)="sidenav.toggle()" class="menu-wrapper navbar__collapse-button">
+            <div #navToggle class="hamburger-menu"></div>
+        </div>
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
         <app-footer></app-footer>
     </mat-sidenav-content>
 </mat-sidenav-container>

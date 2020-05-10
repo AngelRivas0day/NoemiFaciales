@@ -7,7 +7,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatChipsModule} from '@angular/material/chips';  
+import {MatChipsModule} from '@angular/material/chips';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatNativeDateModule } from '@angular/material';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 @NgModule({
   imports: [
@@ -22,7 +27,11 @@ import {MatChipsModule} from '@angular/material/chips';
     MatTabsModule,
     MatSelectModule,
     MatStepperModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRadioModule,
+    MatNativeDateModule,
+    MatMomentDateModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule { }

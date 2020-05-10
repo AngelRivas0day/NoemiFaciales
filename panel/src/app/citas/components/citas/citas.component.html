@@ -1,0 +1,103 @@
+<div class="panel-header panel-header-sm"></div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Citas</h5>
+        </div>
+        <div class="card-body">
+          <div class="horaActual mb-3">
+            <span>Fecha y hora actual: </span
+            >{{ currentDate | date: "dd-MM-yyyy - HH:mm" }}
+          </div>
+          <div class="table-responsive mt-4">
+            <table
+              datatable
+              [dtOptions]="dtOptions"
+              class="row-border hover dataTable"
+              class="w-100"
+            >
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Fecha</th>
+                  <th>Confirmado</th>
+                  <th>Hecho</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody *ngIf="items.length != 0">
+                <tr
+                  *ngFor="let item of items"
+                >
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.nombre }}</td>
+                  <td>{{ item.phone }}</td>
+                  <td>{{ item.date | date: 'dd-MM-yyyy' }}</td>
+                  <td>{{ item.checked == 1 ? 'Si' : 'No' }}</td>
+                  <td>{{ item.done == 1 ? 'Si' : 'No' }}</td>
+                  <td colspan="2">
+                    <ng-container *ngIf="!item.delivered">
+                      <i
+                      class="material-icons icon-trash"
+                      color="warn"
+                      (click)="delete(item.id)"
+                    >
+                      cancel
+                    </i>
+                    &nbsp;
+
+                      <i
+                        class="material-icons icon-edit"
+                        (click)="openEdit(item.id)"
+                       >
+                        edit
+                      </i>
+                    </ng-container>
+                    &nbsp;
+                    <ng-container
+                      *ngIf="!item.checked; else elseTemplate"
+                    >
+                      <i
+                        class="material-icons icon-confirm"
+                        (click)="openEdit(item.id, 1)"
+                      >
+                        book
+                      </i>
+                    </ng-container>
+                    &nbsp;
+                    <ng-template #elseTemplate>
+                      <i
+                        class="material-icons icon-arrived"
+                        (click)="delivered(item.id)"
+                      >
+                        done_all
+                      </i>
+                    </ng-template>
+                    &nbsp;
+                    <ng-container *ngIf="item.delivered">
+                      <i
+                        class="material-icons icon-achieved"
+                        (click)="achieve(item.id)"
+                      >
+                        remove_circle
+                      </i>
+                    </ng-container>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody *ngIf="items.length == 0">
+                <tr>
+                  <td colspan="7" class="no-data-available">No data!</td>
+                </tr>
+              <tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

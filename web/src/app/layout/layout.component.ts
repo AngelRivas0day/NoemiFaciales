@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { CartService } from '../shared/services/cart.service';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  total$: Observable<number>;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+
+  constructor(
+    private cartService: CartService
+  ) { 
+    this.total$ = this.cartService.cart$
+    .pipe(
+      map(items => {return items.length})
+    );
+  }
 
   ngOnInit() {
   }
 
+  onActivate(event) {
+    if(event.constructor.name !== "CartComponent"){
+      window.scroll(0,0);
+    }
+  }
 }

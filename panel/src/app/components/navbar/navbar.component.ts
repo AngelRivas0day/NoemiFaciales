@@ -3,7 +3,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 import Chart from 'chart.js';
-import { ApiService } from 'app/services/services';
+import { ApiService } from 'app/api/services';
 
 @Component({
   selector: 'app-navbar',

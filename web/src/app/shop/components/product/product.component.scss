@@ -1,0 +1,88 @@
+@import "../../../../assets/variables/vars";
+
+#product{
+    width: 100%;
+    height: auto;
+    @media #{$break-medium}{
+        height: 100vH;
+    }
+    .product__container{
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: unset;
+        .product__details-container{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            .product__details{
+                margin-bottom: 30px;
+                margin-top: 100px;
+                h1{
+                    color: black !important;
+                    margin-bottom: 50px;
+                    position: relative;
+                    font-size: 30px;
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        height: 1px;
+                        width: 40px;
+                        background-color: #333;
+                        left: 0;
+                        bottom: -15px;
+                    }
+                    span{
+                        font-size: 10px;
+                        color: rgba(0,0,0,.7);
+                        
+                    }
+                    @media #{$break-medium}{
+                        font-size: 50px;
+                        &:after{
+                            width: 100px;
+                        }
+                        span{
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .products__details-description{
+                    font-size: 14px;
+                    font-weight: 200;
+                    @media #{$break-medium}{
+                        max-width: 70%;
+                    }
+                }
+                .products__details-button{
+                    margin-top: 20px;
+                    @include main-button();
+                }
+            }
+            .go-back-button{
+                margin-top: 30px;
+            }
+        }
+        .product__image-container{
+            background-color: rgba(0,0,0,.4);
+            text-align: center;
+            .product__image{
+                // background-color: rgba(0,0,0,.7);
+                width: 80%;
+                height: 50vH;
+                object-fit: contain;
+                @media #{$break-medium}{
+                    height: 100vH;
+                }
+            }
+        }
+    }
+}
+
+.carousel{
+    height: 100vH;
+    width: 100%;
+    background-color: red;
+}

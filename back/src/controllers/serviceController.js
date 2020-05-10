@@ -56,6 +56,21 @@ controller.add = (req, res) => {
 
 };
 
+controller.listDataTable = (req, res) => {
+  serachPattern = req.body.search.value;
+  req.getConnection((err, conn) => {
+    const query = conn.query(
+    'SELECT * FROM servicios WHERE name LIKE ?', 
+    [`%${serachPattern}%`], 
+    (err, resp) => {
+        if(err){
+            res.send("Hubo un error");
+        }
+        res.json(resp);
+    });
+  });
+};
+
 controller.edit = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, conn) => {
@@ -96,7 +111,18 @@ controller.update = (req, res) => {
 
 controller.delete = (req, res) => {
     const { id } = req.params;
+    const path = 'src/uploads/services';
     req.getConnection((err, connection) => {
+      connection.query('SELECT * FROM servicios WHERE id = ?', [id], (error, response)=>{
+        const imageToDelete = response[0].image;
+        fs.unlink(`${path}/${imageToDelete}`, (err)=>{
+          if(err){
+            console.log(err);
+          }else{
+            console.log("Se borro la foto");
+          }
+        });
+      });
       const query = connection.query('DELETE FROM servicios WHERE id = ?', [id], (err, rows) => {
         if(err){
           res.status(500).send({
@@ -113,6 +139,40 @@ controller.delete = (req, res) => {
         }
       });
     });
+};
+
+controller.uploadImage = (req, res) => {
+  const path = 'src/uploads/services';
+  upload(req, res, function (err) {
+    const id = req.params.id;
+    console.log(req.file);
+    if (err) {
+      res.status(500).send({
+        message: 'La foto no fue actulizada con exito',
+        error: err
+      });
+    }else{
+      // Everything went fine
+      var fileName = req.file.filename;
+      req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM servicios WHERE id = ?', [id], (error, response)=>{
+          const imageToDelete = response[0].image;
+          fs.unlink(`${path}/${imageToDelete}`, (err)=>{
+            if(err){
+              console.log(err);
+            }else{
+              console.log("Se borro la foto");
+            }
+          });
+        });
+        const query = conn.query('UPDATE servicios SET image = ? WHERE id = ?', [fileName, id], (err, rows) => {
+          res.status(200).send({
+            message: 'La foto fue actulizada con exito'
+          });
+        });
+      }); 
+    }
+  });
 };
 
 controller.getImage = (req, res) => {

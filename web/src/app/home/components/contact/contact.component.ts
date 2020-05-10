@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   isLinear = true;
+  image = '../assets/images/phone.jpg';
+  placeholderImage = '../assets/images/phone-min.jpg';
 
   constructor() { }
 

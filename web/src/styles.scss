@@ -104,6 +104,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: 'Open Sans', sans-serif;
 }
 
+.no-padding{
+    padding: 0 !important;
+}
+
+.no-margin{
+    margin: 0 !important;
+}
+
 #footer{
     .mat-form-field-empty.mat-form-field-label {
         color: white !important;

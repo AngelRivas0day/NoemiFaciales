@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { ServicesComponent } from './components/services/services.component';
 import { ContainerComponent } from './components/container/container.component';
 import { RouterModule } from '@angular/router';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     HomeRoutingModule,
     SharedModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    LazyLoadImageModule
   ]
 })
 export class HomeModule { }

@@ -1,8 +1,8 @@
-$main-color: #FFC973;
-$second-color: #BAE85D;
-$third-color: #66FFE1;
-$fourth-color: #E85D7A;
-$fifth-color: #8A78FF;
+$main-color: #ffc973;
+$second-color: #bae85d;
+$third-color: #66ffe1;
+$fourth-color: #e85d7a;
+$fifth-color: #8a78ff;
 $break-small: "screen and (min-width: 576px)"; //de esos px para arriba
 $break-medium: "screen and (min-width: 768px)";
 $break-large: "screen and (min-width: 992px)";
@@ -11,3 +11,46 @@ $bar-width: 25px;
 $bar-height: 3px;
 $bar-spacing: 10px;
 $bars-color: $main-color;
+
+@mixin center-layout{
+  min-height: calc(100vH - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin center-layout-custom($height){
+  min-height: calc(#{$height} - 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin main-button {
+  transition: ease 0.3s;
+  border-radius: 0px;
+  border: 1px solid #333333;
+  color: #333333;
+  width: 200px;
+  position: relative;
+  z-index: 80;
+  &:after {
+    transition: ease 0.3s;
+    content: "";
+    width: 100%;
+    position: absolute;
+    height: 0px;
+    background-color: #333333;
+    bottom: 0;
+    left: 0;
+    z-index: -1 !important;
+  }
+  &:hover {
+    color: white;
+  }
+  &:hover:after {
+    height: 100%;
+  }
+}

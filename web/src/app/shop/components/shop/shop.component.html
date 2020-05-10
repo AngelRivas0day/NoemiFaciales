@@ -1,11 +1,31 @@
 <div id="tienda">
     <div class="container tienda__contenedor">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 tienda__title">
                 <h1 class="text-center lobster-font">Productos</h1>
             </div>
-            <div class="col-12">
-                lorem ipsum dolor sit amet
+        </div>
+        <div class="row">
+            <div *ngFor="let item of items" [ngClass]="{'month_product' : item.month_product, 'non-existent' : !item.existence}"  class="col-xs-12 col-sm-6 col-md-4 col-lg-3 product__item">
+                <div class="product__card">
+                    <div class="card__content">
+                        <h1 class="content__title lobster-font">{{item.name}}</h1>
+                        <span class="content__price roboto-font">{{item.price | currency}}</span>
+                    </div>
+                    <div class="card__actions">
+                        <ng-container *ngIf="item.existence; else elseTemplate">
+                            <a class="roboto-font" [routerLink]="['/productos',item.id]">Detalles</a>
+                            <a (click)="addProd(item, 1)" class="roboto-font">al Carrito</a>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            <a class="roboto-font">Detalles</a>
+                            <a class="roboto-font">al Carrito</a>
+                        </ng-template>
+                    </div>
+                    <div class="card__image-container">
+                        <img [src]="baseUrl + item.image" alt="" class="card__image">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

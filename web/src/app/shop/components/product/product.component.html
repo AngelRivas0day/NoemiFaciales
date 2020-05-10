@@ -1,0 +1,27 @@
+<div id="product">
+    <div *ngIf="(product$ | async) as product" class="product__container container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 product__image-container">
+                <img class='product__image' [src]="baseUrl + product.image" alt="">
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 product__details-container">
+                <button mat-raised-button class='go-back-button' routerLink='/productos'>
+                    Volver
+                    <mat-icon>exit_to_app</mat-icon>
+                </button>
+                <div class="product__details">
+                    <h1 class='lobster-font products__details-title'>{{product.name}} <span class='roboto-font'>{{product.price | currency}} / u</span></h1>
+                    <p class="products__details-description roboto-font">
+                        {{product.description}}
+                    </p>
+                    <a (click)="addProd(product, 1)" mat-raised-button class='products__details-button'>
+                        AGREGAR AL CARRITO
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</div>

@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { SubSink } from 'subsink';
 
-import { ApiService } from 'app/services/services';
+import { ApiService } from 'app/api/services';
 
 @Component({
   selector: 'app-login',

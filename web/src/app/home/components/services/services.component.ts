@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiServiceService } from 'src/app/shared/services/api-service.service';
+import { ApiService } from 'src/app/shared/services/api.service';
 import { environment } from '../../../../environments/environment';
 
 @Component({
@@ -17,7 +17,7 @@ export class ServicesComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public servicesApi: ApiServiceService
+    public servicesApi: ApiService
   ) { }
 
   ngOnInit() {

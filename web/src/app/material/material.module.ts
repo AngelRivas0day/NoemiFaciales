@@ -12,7 +12,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
-import { MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatBadgeModule} from '@angular/material/badge';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -31,7 +33,8 @@ import { MatNativeDateModule } from '@angular/material';
     MatSelectModule,
     MatDatepickerModule,
     MatMomentDateModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

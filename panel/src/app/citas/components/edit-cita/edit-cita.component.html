@@ -1,0 +1,45 @@
+<form id="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h1 mat-dialog-title>Datos de la cita</h1>
+    <div class="container">
+        <div class="row">
+            <div class="co-xs-12 col-sm-12 col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput placeholder="Ej: John Wick" formControlName="nombre">
+                </mat-form-field>
+            </div>
+            <div class="co-xs-12 col-sm-12 col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Teléfono</mat-label>
+                    <input matInput placeholder="Ej: 33 3333 3333" formControlName="phone">
+                </mat-form-field>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Fecha de la cita</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Servicio(s)</mat-label>
+                    <mat-select formControlName="servicios">
+                      <mat-option *ngFor="let option of selectOptions" [value]="option.name">{{option.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="co-xs-12 col-sm-12 col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Notas</mat-label>
+                    <textarea matInput placeholder="Ej: Algunas notas para mi" rows="5" formControlName="notes"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-raised-button type="submit" [disabled]="!form.valid">Guardar</button>
+    </mat-dialog-actions>
+</form>

@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
 import PerfectScrollbar from 'perfect-scrollbar';
 
 import { SubSink } from 'subsink';
-import { ApiService } from 'app/services/services';
+import { ApiService } from 'app/api/services';
 import { UserIdleService } from 'angular-user-idle';
 
 @Component({
